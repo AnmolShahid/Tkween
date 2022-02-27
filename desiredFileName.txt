@@ -1,0 +1,16 @@
+{
+  "ar": [
+    "ebook",
+    "book"
+  ],
+
+  "hi": [
+    "ebook",
+    "book"
+  ],
+
+  "id": [
+    "ebook",
+    "book"
+  ]
+}
