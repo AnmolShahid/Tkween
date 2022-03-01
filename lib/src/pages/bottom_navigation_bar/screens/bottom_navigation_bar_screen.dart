@@ -33,7 +33,12 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
       if (_currentBackPressTime == null ||
           now.difference(_currentBackPressTime!) > const Duration(seconds: 4)) {
         _currentBackPressTime = now;
-        await showToast(msg: AppLocalizations.of(context)!.press_again_to_exit);
+        showSnackbar(
+          context,
+          title: AppLocalizations.of(context)!.press_again_to_exit,
+          subtitle: '',
+        );
+        //  await showToast(msg: AppLocalizations.of(context)!.press_again_to_exit);
         return Future.value(false);
       }
     }
@@ -48,7 +53,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
       child: Scaffold(
         body: PageView(
           controller: _controller,
-          physics:const NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           onPageChanged: (v) => setState(() => _selectedIndex = v),
           children: BottomNavigationList.pageList(context),
         ),
@@ -57,7 +62,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
             setState(() {
               _controller!.animateToPage(
                 v,
-                duration:const Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 200),
                 curve: Curves.ease,
               );
             });
@@ -65,8 +70,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           currentIndex: _selectedIndex,
           selectedItemColor: theme.primaryColor,
           unselectedItemColor: theme.hintColor,
-          selectedLabelStyle:
-              theme.textTheme.subtitle2!.copyWith(fontSize: 10),
+          selectedLabelStyle: theme.textTheme.subtitle2!.copyWith(fontSize: 10),
           unselectedLabelStyle:
               theme.textTheme.subtitle2!.copyWith(fontSize: 10),
           type: BottomNavigationBarType.fixed,

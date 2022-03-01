@@ -14,6 +14,7 @@ class Routes {
   static const String onBoarding = '/onBoarding';
   static const String signIn = '/signIn';
   static const String signUp = '/signUp';
+  static const String otp = '/otp/otp_page.dart';
   static const String search = '/search';
   static const String shop = '/shop';
   static const String allProduct = '/allProduct';
@@ -44,7 +45,7 @@ class Routes {
 }
 
 class CustomIcon {
-  static const String appIcon='assets/appIcon.png';
+  static const String appIcon = 'assets/appIcon.png';
   static const String ebook = 'assets/ebook.svg';
   static const String book = 'assets/book.svg';
   static const String apple = 'assets/apple.svg';
@@ -87,3 +88,6 @@ class Images {
   static const String resetPassword = 'assets/reset_password.svg';
   static const String shopDeals = 'assets/shop_deals.png';
 }
+
+var verificationId;
+var smsOtp;

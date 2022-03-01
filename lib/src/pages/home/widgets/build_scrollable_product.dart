@@ -24,7 +24,7 @@ class _BuildScrollableProduct extends StatelessWidget {
         const SizedBox(height: Const.space12),
         SizedBox(
           width: Screens.width(context),
-          height: 280,
+          height: 300,
           child: ListView.builder(
             itemCount: itemList.length,
             scrollDirection: Axis.horizontal,

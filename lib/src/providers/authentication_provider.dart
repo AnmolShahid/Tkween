@@ -1,7 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:otp_screen/otp_screen.dart';
 import 'package:tkween/src/helpers/constants.dart';
+import 'package:tkween/src/pages/home/home_page.dart';
+import 'package:tkween/src/pages/otp/otp_page.dart';
+import 'package:tkween/src/services/phone_auth.dart';
 
 enum AuthStatus { notAuthenticated, authenticated }
 // enum Gender { male, female }
@@ -45,7 +49,10 @@ class AuthenticationProvider with ChangeNotifier {
   Future signIn(BuildContext context, {String? email, String? password}) async {
     return Future<dynamic>.delayed(const Duration(seconds: 2), () {
       isLoading = false;
-      Get.offAllNamed<dynamic>(Routes.home);
+      print(email);
+      verifyPhone(context, email!);
+
+      Get.to(() => (OTPScreen(number: email)));
       authStatus = AuthStatus.authenticated;
     });
   }

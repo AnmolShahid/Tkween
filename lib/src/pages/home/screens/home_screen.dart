@@ -16,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     _searchController = TextEditingController();
   }
+
   final GlobalKey<ScaffoldState> key = GlobalKey(); // Create a key
 
   @override
@@ -36,20 +37,28 @@ class _HomeScreenState extends State<HomeScreen> {
         });
       },
       child: Scaffold(
-
         key: key,
         endDrawer: CustomDrawer(),
         appBar: AppBar(
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Theme.of(context).primaryColor
-          ),
-          iconTheme: IconThemeData(color: Theme.of(context).backgroundColor),
-          backgroundColor: Theme.of(context).primaryColor,
-          titleSpacing: 0,
-          centerTitle: true,
-          title:const _BuildHeader(),
-          leading: Icon(Icons.search_outlined,color:Colors.white,size:26,),
-        ),
+            systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarColor: Theme.of(context).primaryColor),
+            iconTheme: IconThemeData(color: Theme.of(context).backgroundColor),
+            backgroundColor: Theme.of(context).primaryColor,
+            titleSpacing: 0,
+            centerTitle: true,
+            title: const _BuildHeader(),
+            leading: GestureDetector(
+              child: Icon(
+                Icons.search_outlined,
+                color: Colors.white,
+                size: 26,
+              ),
+              onTap: () {
+                FocusScope.of(context).requestFocus(FocusNode());
+                Get.toNamed<dynamic>(Routes.search,
+                    arguments: _searchController?.text);
+              },
+            )),
         body: SafeArea(
           child: Stack(
             children: [
@@ -57,16 +66,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 top: 0,
                 child: ListView(
                   children: [
-   //                 CarouselWithIndicatorDemo(),
+                    //                 CarouselWithIndicatorDemo(),
                     const SizedBox(height: Const.space15),
-                    _BuildSearch(
+                    /* _BuildSearch(
                       controller: _searchController,
                       onSearchTap: () {
                         FocusScope.of(context).requestFocus(FocusNode());
                         Get.toNamed<dynamic>(Routes.search,
                             arguments: _searchController?.text);
                       },
-                    ),
+                    ),*/
                     const SizedBox(height: Const.space25),
                     const _BuildScrollableCategory(),
                     const SizedBox(height: Const.space25),
@@ -104,7 +113,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-
             ],
           ),
         ),

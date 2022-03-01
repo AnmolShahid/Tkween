@@ -4,17 +4,29 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:tkween/src/helpers/colors.dart';
 
+Widget toast = Container(
+  padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(25.0),
+    color: Colors.greenAccent,
+  ),
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Icon(Icons.check),
+      SizedBox(
+        width: 12.0,
+      ),
+      Text("This is a Custom Toast"),
+    ],
+  ),
+);
 
-Future showToast(
-    {required String msg, Color? backgroundColor, Color? textColor}) {
-  return Fluttertoast.showToast(
-    msg: msg,
-    toastLength: Toast.LENGTH_SHORT,
-    fontSize: 16,
-    gravity: ToastGravity.CENTER,
-    backgroundColor: ColorDark.card,
-    textColor: textColor ?? Colors.white,
-  );
+ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showToast(
+    {context, required String msg, Color? backgroundColor, Color? textColor}) {
+  return ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Text(msg),
+  ));
 }
 
 SnackbarController showSnackbar(
@@ -31,7 +43,7 @@ SnackbarController showSnackbar(
     messageText: Text(subtitle, style: theme.textTheme.subtitle2),
     forwardAnimationCurve: Curves.easeInBack,
     backgroundColor: theme.cardColor,
-    icon:const Icon(FeatherIcons.checkCircle),
+    icon: const Icon(FeatherIcons.checkCircle),
     snackPosition: position,
   );
 }

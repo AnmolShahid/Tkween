@@ -40,7 +40,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   const SizedBox(height: 70),
                   const _BuildLogo(),
                   // const SizedBox(height: Const.space25),
-                 // const _BuildSocialButton(),
+                  // const _BuildSocialButton(),
                   const SizedBox(height: Const.space25),
                   const _BuildDivider(),
                   const SizedBox(height: Const.space25),
@@ -61,6 +61,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         initialCountryCode: 'SA',
                         onChanged: (phone) {
                           print(phone.completeNumber);
+                          _phoneController.text = phone.completeNumber;
                         },
                       ),
                     ),
@@ -85,7 +86,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               CustomFadeTransition(
                 axis: Axis.horizontal,
-                duration:const Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 200),
                 child: CustomTextButton(
                   label: 'Browse as a Guest',
                   enableUnderline: true,
@@ -94,7 +95,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   onTap: () => Get.toNamed<dynamic>(Routes.home),
                 ),
               )
-             // const _BuildSkipButton(route: Routes.home,),
+              // const _BuildSkipButton(route: Routes.home,),
             ],
           ),
         ),
@@ -102,5 +103,3 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 }
-
-
