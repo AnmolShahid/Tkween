@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "594326679470",
+    "project_id": "tkween-1122",
+    "storage_bucket": "tkween-1122.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594326679470:android:d0c241df576e07458ca23f",
+        "android_client_info": {
+          "package_name": "com.tap.tkween"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594326679470-itclgju1jj8n1na3p447t7s36bipnths.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQPpOKwTdOV8njRw6F_NgxDozEGLo2O-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594326679470-itclgju1jj8n1na3p447t7s36bipnths.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "594326679470-vrsbvk8oj90dd3dsurdsrk3sn1mkqtd6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tap.tkween"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

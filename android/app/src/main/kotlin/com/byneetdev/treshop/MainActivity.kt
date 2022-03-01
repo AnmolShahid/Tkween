@@ -1,4 +1,4 @@
-package com.tkween.booksapp
+package com.tap.tkween
 
 import io.flutter.embedding.android.FlutterActivity
 
