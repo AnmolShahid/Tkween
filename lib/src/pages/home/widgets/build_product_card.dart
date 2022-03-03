@@ -93,7 +93,7 @@ class _BuildProductCardState extends State<_BuildProductCard> {
                   width: 170,
                   child: Column(
                     children: [
-                      Spacer(),
+                    //  Spacer(),
                       Container(
                         color: Colors.white,
                         height: 3,

@@ -21,6 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    return Consumer<LocaleProvider>(builder: (context, locale, snapshot) {
+      final lang = locale.locale ?? Localizations.localeOf(context);
     return SmartRefresher(
       controller: _refreshController,
       header: const WaterDropMaterialHeader(),
@@ -38,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
       },
       child: Scaffold(
         key: key,
-        endDrawer: CustomDrawer(),
+        endDrawer: lang == 'ar'? CustomDrawer(): SizedBox(),
         appBar: AppBar(
             systemOverlayStyle: SystemUiOverlayStyle(
                 statusBarColor: Theme.of(context).primaryColor),
@@ -67,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView(
                   children: [
                     //                 CarouselWithIndicatorDemo(),
-                    const SizedBox(height: Const.space15),
+                  //  const SizedBox(height: Const.space15),
                     /* _BuildSearch(
                       controller: _searchController,
                       onSearchTap: () {
@@ -76,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             arguments: _searchController?.text);
                       },
                     ),*/
-                    const SizedBox(height: Const.space25),
+                    const SizedBox(height: Const.space15),
                     const _BuildScrollableCategory(),
                     const SizedBox(height: Const.space25),
                     _BuildScrollableProduct(
@@ -118,5 +120,5 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-  }
+  });}
 }
