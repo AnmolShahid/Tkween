@@ -87,7 +87,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
               Future.delayed(const Duration(seconds: 2), () {
                 setState(() => _isLoading = false);
                 Get.back<dynamic>();
-                showToast(msg: AppLocalizations.of(context)!.profile_updated);
+                showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.profile_updated);
               });
             },
             label: AppLocalizations.of(context)!.save,

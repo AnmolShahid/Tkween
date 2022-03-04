@@ -46,7 +46,7 @@ class _ProductScreenState extends State<ProductScreen> {
             onAddToCartTap: () {
               CartModel cart = new CartModel(productName: product.name, productImage: product.images!.first, price: product.price, qty: _qty);
               CartList.cartList.add(cart);
-              showToast(msg: AppLocalizations.of(context)!.added_to_cart);
+              showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.added_to_cart);
             },
           )
         ],

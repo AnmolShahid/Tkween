@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:octo_image/octo_image.dart';
+import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:tkween/src/helpers/colors.dart';
 import 'package:tkween/src/helpers/constants.dart';
@@ -16,6 +17,7 @@ import 'package:tkween/src/list_data/product_list.dart';
 import 'package:tkween/src/models/cart_model.dart';
 import 'package:tkween/src/models/category_model.dart';
 import 'package:tkween/src/models/product_model.dart';
+import 'package:tkween/src/providers/locale_provider.dart';
 //import 'package:tkween/src/pages/home/widgets/image_slider.dart';
 import 'package:tkween/src/widgets/custom_drawer.dart';
 

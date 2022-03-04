@@ -49,7 +49,7 @@ Future<dynamic> _onModalBottomSheetTap(BuildContext context) {
                     label: AppLocalizations.of(context)!.gallery,
                     onTap: () {
                       Get.back<dynamic>();
-                      showToast(msg: AppLocalizations.of(context)!.open_gallery_tapped);
+                      showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.open_gallery_tapped);
                     },
                   ),
                   const SizedBox(width: Const.space25),
@@ -58,7 +58,7 @@ Future<dynamic> _onModalBottomSheetTap(BuildContext context) {
                     label: AppLocalizations.of(context)!.camera,
                     onTap: () {
                       Get.back<dynamic>();
-                      showToast(msg: AppLocalizations.of(context)!.open_camera_tapped);
+                      showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.open_camera_tapped);
                     },
                   ),
                 ],

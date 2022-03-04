@@ -65,7 +65,7 @@ class _FooterSection extends StatelessWidget {
                 AutoSizeText(
                   NumberFormat.currency(
                     symbol: r'$',
-                     decimalDigits: 0,
+                    decimalDigits: 0,
                   ).format(total ?? 0),
                   style: theme.textTheme.headline3,
                 ),
@@ -78,12 +78,14 @@ class _FooterSection extends StatelessWidget {
               CustomElevatedButton(
                 onTap: () {
                   if (provider.addressSelected == null) {
-                    showToast(
-                        msg: AppLocalizations.of(context)!
+                    showSnackbar(context,
+                        subtitle: '',
+                        title: AppLocalizations.of(context)!
                             .choose_the_destination_address);
                   } else if (provider.paymentSelected == null) {
-                    showToast(
-                        msg: AppLocalizations.of(context)!
+                    showSnackbar(context,
+                        subtitle: '',
+                        title: AppLocalizations.of(context)!
                             .payment_method_not_selected);
                   } else {
                     provider.isLoading = true;

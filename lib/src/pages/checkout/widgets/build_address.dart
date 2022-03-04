@@ -10,11 +10,17 @@ class _BuildAddress extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _BuildLabelSection(
+        Container(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            AppLocalizations.of(context)!.address,
+          ),
+        ),
+        /* _BuildLabelSection(
           label: AppLocalizations.of(context)!.address,
           trailing: AppLocalizations.of(context)!.add_address,
           onViewAllTap: ()=> Get.toNamed<dynamic>(Routes.addressAdd),
-        ),
+        ),*/
         const SizedBox(height: Const.space8),
         SizedBox(
           width: Screens.width(context),

@@ -10,7 +10,7 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  bool isLiked=false;
+  bool isLiked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,36 +27,44 @@ class _DetailsScreenState extends State<DetailsScreen> {
       backgroundColor: Theme.of(context).primaryColor,
       elevation: 0,
       leading: IconButton(
-        icon: Icon(Icons.arrow_back,color:Colors.white ,),
+        icon: Icon(
+          Icons.arrow_back,
+          color: Colors.white,
+        ),
         onPressed: () => Navigator.pop(context),
-
       ),
       actions: [
-        if(isLiked)...[
+        if (isLiked) ...[
           GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  isLiked=!isLiked;
+                  isLiked = !isLiked;
                 });
               },
               child: Container(
-                padding: EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: Colors.red,
-                    shape: BoxShape.circle
-                  ),
-                  child: Icon(Icons.favorite,color:Colors.white,size: 20,)))
-
-        ]else...[
+                  padding: EdgeInsets.all(4),
+                  decoration:
+                      BoxDecoration(color: Colors.red, shape: BoxShape.circle),
+                  child: Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                    size: 20,
+                  )))
+        ] else ...[
           GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  isLiked=!isLiked;
+                  isLiked = !isLiked;
                 });
               },
-              child: Icon(Icons.favorite_border,color: Colors.grey,)),
+              child: Icon(
+                Icons.favorite_border,
+                color: Colors.grey,
+              )),
         ],
-        SizedBox(width: 10,),
+        SizedBox(
+          width: 10,
+        ),
       ],
     );
   }

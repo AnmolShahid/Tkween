@@ -3,12 +3,14 @@ part of '../home_page.dart';
 class _BuildScrollableProduct extends StatelessWidget {
   final List<ProductModel> itemList;
   final String label;
+  final bool scrollDirection;
   final VoidCallback onSeeAllTap;
 
   const _BuildScrollableProduct({
     Key? key,
     required this.itemList,
     required this.label,
+    required this.scrollDirection,
     required this.onSeeAllTap,
   }) : super(key: key);
 
@@ -26,6 +28,7 @@ class _BuildScrollableProduct extends StatelessWidget {
           width: Screens.width(context),
           height: 300,
           child: ListView.builder(
+            reverse: scrollDirection,
             itemCount: itemList.length,
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),

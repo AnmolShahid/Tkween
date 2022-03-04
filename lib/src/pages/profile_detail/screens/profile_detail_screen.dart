@@ -7,11 +7,13 @@ class ProfileDetailScreen extends StatefulWidget {
 }
 
 class _ProfileDetailScreenState extends State<ProfileDetailScreen> {
-  static const String _userImage = 'https://i.pinimg.com/564x/fc/30/65/fc30653203c453c33b12d66f6837b6d5.jpg';
+  static const String _userImage =
+      'https://i.pinimg.com/564x/fc/30/65/fc30653203c453c33b12d66f6837b6d5.jpg';
   static const String _username = 'dickyrey99';
   static const String _email = 'developer@tkween.com';
   static const String _phoneNumber = '081345071707';
-  static const String _address = 'Home 403 Oakland Ave Street, A city, Florida, 32104, United States of America';
+  static const String _address =
+      'Home 403 Oakland Ave Street, A city, Florida, 32104, United States of America';
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,7 @@ class _ProfileDetailScreenState extends State<ProfileDetailScreen> {
             label: AppLocalizations.of(context)!.primary_address,
             text: _address,
           ),
-          const SizedBox(height: Const.space25),
+          /*  const SizedBox(height: Const.space25),
           ListTile(
             contentPadding: EdgeInsets.zero,
             onTap: () => Get.toNamed<dynamic>(Routes.address),
@@ -66,10 +68,10 @@ class _ProfileDetailScreenState extends State<ProfileDetailScreen> {
             trailing: Icon(FeatherIcons.chevronRight,
                 size: 16, color: _theme.hintColor),
           ),
+        */
           const SizedBox(height: Const.space25),
         ],
       ),
     );
   }
 }
-

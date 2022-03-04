@@ -10,8 +10,7 @@ class _BuildSocialButton extends StatelessWidget {
         CustomShakeTransition(
           child: CustomSocialButton(
             label: AppLocalizations.of(context)!.connect_with_apple_id,
-            onTap: () => showToast(
-              msg: AppLocalizations.of(context)!.apple_sign_in_clicked,
+            onTap: () => showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.apple_sign_in_clicked,
             ),
             icon: CustomIcon.apple,
           ),
@@ -21,8 +20,7 @@ class _BuildSocialButton extends StatelessWidget {
           duration: const Duration(milliseconds: 800),
           child: CustomSocialButton(
             label: AppLocalizations.of(context)!.connect_with_google,
-            onTap: () => showToast(
-              msg: AppLocalizations.of(context)!.google_sign_in_clicked,
+            onTap: () => showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.google_sign_in_clicked,
             ),
             icon: CustomIcon.google,
           ),
@@ -32,8 +30,7 @@ class _BuildSocialButton extends StatelessWidget {
           duration: const Duration(milliseconds: 900),
           child: CustomSocialButton(
             label: AppLocalizations.of(context)!.connect_with_facebook,
-            onTap: () => showToast(
-              msg: AppLocalizations.of(context)!.facebook_sign_in_clicked,
+            onTap: () => showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.facebook_sign_in_clicked,
             ),
             icon: CustomIcon.facebook,
           ),

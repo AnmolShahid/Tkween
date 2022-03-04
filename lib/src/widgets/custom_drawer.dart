@@ -35,21 +35,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
           padding: EdgeInsets.all(0),
           children: [
             if (lang == 'ar') ...[
-              Container(
-                padding: EdgeInsets.all(20.0),
-                color: theme.primaryColor,
-                width: double.infinity,
-                height: 120,
-                child: Text(
-                  'Hello guest',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16),
-                ),
-              ),
-              arbWidget(theme, themeProvider)
-            ] else ...[
               SizedBox(
                 width: 200,
                 height: 200,
@@ -73,7 +58,40 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       child: Text(
                         'Hello guest',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: theme.backgroundColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              arbWidget(theme, themeProvider)
+            ] else ...[
+              SizedBox(
+                width: 200,
+                height: 200,
+                child: Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      color: theme.primaryColor,
+                      width: 100,
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundImage: CachedNetworkImageProvider(_userImage),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      alignment: Alignment.centerLeft,
+                      color: theme.primaryColor,
+                      width: Get.width / 2.03,
+                      height: 120,
+                      child: Text(
+                        'Hello guest',
+                        style: TextStyle(
+                            color: theme.backgroundColor,
                             fontWeight: FontWeight.bold,
                             fontSize: 16),
                       ),
@@ -90,7 +108,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   children: [
                     ListTile(
                       contentPadding: EdgeInsets.zero,
-                      onTap: () => Get.toNamed<dynamic>(Routes.profileDetail),
+                      onTap: () {
+                        Get.toNamed<dynamic>(Routes.profileDetail);
+                      },
                       leading: Icon(FeatherIcons.user, color: theme.hintColor),
                       title: AutoSizeText(
                           AppLocalizations.of(context)!.detail_profile,

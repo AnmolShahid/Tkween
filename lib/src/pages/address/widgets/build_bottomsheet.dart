@@ -46,8 +46,7 @@ Future<dynamic> _onModalBottomSheetTap(BuildContext context) {
               contentPadding: EdgeInsets.zero,
               onTap: () {
                 Get.back<dynamic>();
-                showToast(
-                    msg: AppLocalizations.of(context)!
+              showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!
                         .select_as_primary_address_on_click);
               },
               title: Text(
@@ -58,7 +57,7 @@ Future<dynamic> _onModalBottomSheetTap(BuildContext context) {
             ListTile(
               contentPadding: EdgeInsets.zero,
               onTap: () {
-                showToast(msg: AppLocalizations.of(context)!.edit_on_click);
+               showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.edit_on_click);
               },
               title: Text(
                 AppLocalizations.of(context)!.edit,
@@ -68,7 +67,7 @@ Future<dynamic> _onModalBottomSheetTap(BuildContext context) {
             ListTile(
               contentPadding: EdgeInsets.zero,
               onTap: () {
-                showToast(msg: AppLocalizations.of(context)!.delete_on_click);
+               showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.delete_on_click);
               },
               title: Text(
                 AppLocalizations.of(context)!.delete,

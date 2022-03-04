@@ -18,10 +18,10 @@ void signInWithPhoneNumber(smsController) async {
     );
 
     final User? user = (await _auth.signInWithCredential(credential)).user;
-
-    showToast(msg: "Successfully signed in UID: ${user!.uid}");
+  
+  //  showToast(msg: "Successfully signed in UID: ${user!.uid}");
   } catch (e) {
-    showToast(msg: "Failed to sign in: " + e.toString());
+  //  showToast(msg: "Failed to sign in: " + e.toString());
   }
 }
 

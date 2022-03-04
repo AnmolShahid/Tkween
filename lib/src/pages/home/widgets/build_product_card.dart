@@ -93,7 +93,7 @@ class _BuildProductCardState extends State<_BuildProductCard> {
                   width: 170,
                   child: Column(
                     children: [
-                    //  Spacer(),
+                      //  Spacer(),
                       Container(
                         color: Colors.white,
                         height: 3,
@@ -161,8 +161,10 @@ class _BuildProductCardState extends State<_BuildProductCard> {
                                           price: widget.product.price,
                                           qty: 1);
                                       CartList.cartList.add(cart);
-                                      showToast(
-                                          msg: AppLocalizations.of(context)!
+                                      print(CartList.cartList);
+                                      showSnackbar(context,
+                                          subtitle: '',
+                                          title: AppLocalizations.of(context)!
                                               .added_to_cart);
                                     },
                                     child: Container(

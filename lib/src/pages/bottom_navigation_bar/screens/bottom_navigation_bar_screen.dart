@@ -38,7 +38,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           title: AppLocalizations.of(context)!.press_again_to_exit,
           subtitle: '',
         );
-        //  await showToast(msg: AppLocalizations.of(context)!.press_again_to_exit);
+       showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.press_again_to_exit);
         return Future.value(false);
       }
     }

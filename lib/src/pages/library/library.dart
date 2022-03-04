@@ -15,7 +15,6 @@ import 'package:tkween/src/models/product_model.dart';
 import 'package:tkween/src/pages/library/pdf_view.dart';
 import 'package:tkween/src/widgets/custom_app_bar.dart';
 
-
 class Library extends StatefulWidget {
   const Library({Key? key}) : super(key: key);
 
@@ -39,8 +38,7 @@ class _LibraryState extends State<Library> {
           ),
         ],
       ),
-      body:Column(
-
+      body: Column(
         children: [
           Expanded(
             child: ResponsiveGridList(
@@ -52,7 +50,7 @@ class _LibraryState extends State<Library> {
               }).toList(),
             ),
           ),
-      ],
+        ],
       ),
     );
   }
@@ -94,16 +92,18 @@ class _ProductCardState extends State<_ProductCard> {
     final _theme = Theme.of(context);
 
     return GestureDetector(
-      onTap: () async{
+      onTap: () async {
         fromAsset('assets/book.pdf', 'book.pdf').then((f) {
           setState(() {
             var pathPDF = f.path;
-            Get.to(PDFScreen(path: pathPDF,));
+            Get.to(PDFScreen(
+              path: pathPDF,
+            ));
           });
         });
       },
       child: Container(
-        height: 220,
+        height: 250,
         decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(15),
@@ -115,13 +115,15 @@ class _ProductCardState extends State<_ProductCard> {
               image: CachedNetworkImageProvider(
                 widget.product.images!.first,
               ),
-            )
-        ),
+            )),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Spacer(),
-            Container(height:2,color: Colors.white,),
+            Container(
+              height: 2,
+              color: Colors.white,
+            ),
             Container(
               width: double.maxFinite,
               height: 40,
@@ -139,18 +141,16 @@ class _ProductCardState extends State<_ProductCard> {
                   Expanded(
                     child: Center(
                       child: Text(
-                         'Read',
+                        'Read',
                         maxLines: 1,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                           fontSize: _theme.textTheme.bodyText2?.fontSize,
-                          color: Colors.white
-                        ),
+                            fontSize: _theme.textTheme.bodyText2?.fontSize,
+                            color: Colors.white),
                       ),
                     ),
                   ),
                   const SizedBox(height: Const.space8),
-
                 ],
               ),
             )

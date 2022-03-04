@@ -1,7 +1,6 @@
 part of '../coupon_page.dart';
 
-class CouponScreen extends StatelessWidget { 
-
+class CouponScreen extends StatelessWidget {
   const CouponScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -9,16 +8,16 @@ class CouponScreen extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: CustomAppBar(
-          context,
-          title: AppLocalizations.of(context)!.my_coupon,
-          bottom: PreferredSize(
-            preferredSize:const Size.fromHeight(50),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Const.radius),
-              ),
-              child: TabBar(
+          appBar: CustomAppBar(
+            context,
+            title: AppLocalizations.of(context)!.my_coupon,
+            bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(50),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Const.radius),
+                ),
+                /*   child: TabBar(
                 indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(Const.radius),
                   color: theme.primaryColor,
@@ -34,17 +33,49 @@ class CouponScreen extends StatelessWidget {
                   Tab(text: AppLocalizations.of(context)!.expired),
                 ],
               ),
+         */
+              ),
             ),
           ),
-        ),
-        body: TabBarView(
+          body: Container(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Enter Your Coupon Here "),
+                      SizedBox(
+                        height: 4,
+                      ),
+                      CustomTextFormField(
+                        borderType: BorderType.outline,
+                        textFieldType: TextFieldType.email,
+                        hintText: "Coupon",
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  CustomElevatedButton(
+                    width: 200,
+                    onTap: () {},
+                    label: 'Apply',
+                  ),
+                ],
+              ))
+
+          /*    TabBarView(
           children: [
             _CouponListTabScreen(itemCount: CouponList.couponList),
             _CouponListTabScreen(itemCount: CouponList.usedList),
             _CouponListTabScreen(itemCount: CouponList.expiredList),
           ],
-        ),
-      ),
+        ),*/
+          ),
     );
   }
 }

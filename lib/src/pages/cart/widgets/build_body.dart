@@ -36,7 +36,7 @@ class __BuildBodyState extends State<_BuildBody> {
                 child: CartCard(
                   cart: cart,
                   onRemoveTap: () {
-                    showToast(msg: AppLocalizations.of(context)!.product_removed);
+                   showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.product_removed);
                     CartList.cartList.removeAt(index);
                     setState(() {});
                   },

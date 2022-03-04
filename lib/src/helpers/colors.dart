@@ -17,7 +17,7 @@ class ColorLight {
 }
 
 class ColorDark {
-  static const Color primary = Color(0xFFFC8080);
+  static const Color primary = Color.fromARGB(255, 255, 255, 255);
   // static const Color accent = Color(0xFFFF6600);
   static const Color background = Color(0xFF303030);
   static const Color card = Color(0xFF424242);
@@ -32,6 +32,7 @@ class ColorDark {
   static const Color error = Color(0xFFE57373);
   static const Color info = Color(0xFF64B5F6);
 }
+
 class HexColor extends Color {
   static int _getColorFromHex(String hexColor) {
     hexColor = hexColor.toUpperCase().replaceAll("#", "");

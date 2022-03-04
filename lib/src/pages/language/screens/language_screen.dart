@@ -8,7 +8,7 @@ class LanguageScreen extends StatelessWidget {
     final theme = Theme.of(context);
 
     Text _title(String val) {
-       switch (val) {
+      switch (val) {
         case 'en':
           return Text('English', style: theme.textTheme.bodyText2);
         case 'id':
@@ -26,7 +26,7 @@ class LanguageScreen extends StatelessWidget {
       final lang = locale.locale ?? Localizations.localeOf(context);
 
       return Scaffold(
-        appBar: CustomAppBar(
+        appBar: CustomAppBarLang(
           context,
           title: AppLocalizations.of(context)!.change_language,
         ),

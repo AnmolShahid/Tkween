@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import 'package:tkween/src/helpers/constants.dart';
@@ -24,12 +25,13 @@ class AddressCard extends StatelessWidget {
 
     return Consumer<CheckoutProvider>(builder: (context, checkout, snapshot) {
       return Padding(
-        padding: const EdgeInsets.only(right: Const.space15),
+        padding:
+            const EdgeInsets.only(right: Const.space15, left: Const.space15),
         child: InkWell(
           onTap: onAddressTap,
           borderRadius: BorderRadius.circular(Const.radius),
           child: Container(
-            width: 250,
+            width: Get.width - 50,
             padding: const EdgeInsets.all(Const.space12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Const.radius),

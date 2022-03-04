@@ -53,6 +53,7 @@ class _SelectLanguageState extends State<SelectLanguage> {
                     onTap: () {
                       locale.setLocale(Locale('en'));
                       Get.toNamed(Routes.onBoarding);
+                      
                     },
                   ),
                 ),

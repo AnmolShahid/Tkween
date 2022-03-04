@@ -22,7 +22,7 @@ class _OTPScreenState extends State<OTPScreen> {
           (await _auth.signInWithCredential(phoneAuthCredential)).user;
 
       if (user != null) {
-        Get.offAll(() => HomeScreen());
+        Get.offAllNamed<dynamic>(Routes.home);
       } else {
         return "You Entered Wrong OTP";
       }
@@ -34,7 +34,7 @@ class _OTPScreenState extends State<OTPScreen> {
 
   // action to be performed after OTP validation is success
   void moveToNextScreen(context) {
-    Get.offAll(() => HomeScreen());
+    Get.offAllNamed<dynamic>(Routes.home);
   }
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

@@ -10,11 +10,11 @@ class _BuildCategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    final theme = Theme.of(context);
     return Card(
       margin: const EdgeInsets.only(
         right: Const.space5,
-        left:Const.space5 ,
+        left: Const.space5,
         bottom: 2,
       ),
       shape: RoundedRectangleBorder(
@@ -27,9 +27,12 @@ class _BuildCategoryCard extends StatelessWidget {
           arguments: category.name,
         ),
         child: Container(
-          width:MediaQuery.of(context).size.width/2.35,
+          width: MediaQuery.of(context).size.width / 2.35,
           padding: const EdgeInsets.all(Const.space8),
-          child: SvgPicture.asset(category.icon!, color: ColorLight.primary,),
+          child: SvgPicture.asset(
+            category.icon!,
+            color: theme.primaryColor,
+          ),
         ),
       ),
     );
