@@ -91,3 +91,4 @@ class Images {
 
 var verificationId;
 var smsOtp;
+var total_price = 0;

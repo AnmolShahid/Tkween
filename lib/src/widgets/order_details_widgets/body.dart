@@ -12,9 +12,10 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     // It provide us total height and width
     Size size = MediaQuery.of(context).size;
+    final _theme = Theme.of(context);
     return SingleChildScrollView(
       child: Container(
-        color: Colors.white,
+        color: _theme.backgroundColor,
         child: Column(
           children: <Widget>[
             Stack(
@@ -28,7 +29,7 @@ class Body extends StatelessWidget {
                   ),
                   // height: 500,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: _theme.backgroundColor,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(0),
                       topRight: Radius.circular(0),
@@ -36,68 +37,72 @@ class Body extends StatelessWidget {
                   ),
                   child: Column(
                     children: <Widget>[
-                      SizedBox(height: 50 ),
-                     // ColorAndSize(product: product),
-                     //  SizedBox(height: 20 / 2),
-                     //  textField(type: 'المؤلف :',title: 'علي حسن العلي'),
-                     //  SizedBox(height:10),
-                     //  textField(type: ' نوع الكتاب :',title: 'كتاب إلكتروني, كتاب ورقي'),
-                     //  SizedBox(height:10),
-                     //  textField(type: ' اللغة :',title: 'العربية'),
-                     //  SizedBox(height:10),
-                     //  textField(type: ' الناشر :',title: 'شركة تكوين العالمية للنشر والتوزيع'),
-
+                      SizedBox(height: 50),
+                      // ColorAndSize(product: product),
+                      //  SizedBox(height: 20 / 2),
+                      //  textField(type: 'المؤلف :',title: 'علي حسن العلي'),
+                      //  SizedBox(height:10),
+                      //  textField(type: ' نوع الكتاب :',title: 'كتاب إلكتروني, كتاب ورقي'),
+                      //  SizedBox(height:10),
+                      //  textField(type: ' اللغة :',title: 'العربية'),
+                      //  SizedBox(height:10),
+                      //  textField(type: ' الناشر :',title: 'شركة تكوين العالمية للنشر والتوزيع'),
 
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Table(
-
                           // textDirection: TextDirection.rtl,
                           // defaultVerticalAlignment: TableCellVerticalAlignment.bottom,
-                           border:TableBorder.all(width: 1.0,color: Colors.grey),
+                          border:
+                              TableBorder.all(width: 1.0, color: Colors.grey),
                           children: [
-                            TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Text("لمؤلف",),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Text("علي حسن العلي",),
-                                  ),
-                                ]
-                            ),
-                            TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Text("اللغة",),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Text("لعربية",),
-                                  ),
-                                ]
-                            ),
-                            TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Text("الناشر",),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Text("شركة تكوين العالمية للنشر والتوزيع",),
-                                  ),
-                                ]
-                            ),
+                            TableRow(children: [
+                              Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: Text(
+                                  "لمؤلف",
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: Text(
+                                  "علي حسن العلي",
+                                ),
+                              ),
+                            ]),
+                            TableRow(children: [
+                              Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: Text(
+                                  "اللغة",
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: Text(
+                                  "لعربية",
+                                ),
+                              ),
+                            ]),
+                            TableRow(children: [
+                              Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: Text(
+                                  "الناشر",
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: Text(
+                                  "شركة تكوين العالمية للنشر والتوزيع",
+                                ),
+                              ),
+                            ]),
                           ],
                         ),
                       ),
                       Description(product: product),
                       SizedBox(height: 20 / 2),
-
                     ],
                   ),
                 ),
@@ -112,11 +117,16 @@ class Body extends StatelessWidget {
 
   Row textField({required String type, required String title}) {
     return Row(
-                      children: [
-                        Text(type,style: TextStyle(fontSize: 16,color: Colors.black),),
-                        SizedBox(width: 5,),
-                        Text(title,style: TextStyle(fontSize: 14,color: Colors.black))
-                      ],
-                    );
+      children: [
+        Text(
+          type,
+          style: TextStyle(fontSize: 16, color: Colors.black),
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text(title, style: TextStyle(fontSize: 14, color: Colors.black))
+      ],
+    );
   }
 }

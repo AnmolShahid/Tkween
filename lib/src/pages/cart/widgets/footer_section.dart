@@ -3,10 +3,11 @@ part of '../cart_page.dart';
 class _FooterSection extends StatelessWidget {
   final int? total;
   final VoidCallback? onCheckoutTap;
-
+  final int? price;
   const _FooterSection({
     Key? key,
     this.total,
+    this.price,
     this.onCheckoutTap,
   }) : super(key: key);
   @override
@@ -16,9 +17,9 @@ class _FooterSection extends StatelessWidget {
     return Consumer<CartProvider>(builder: (context, cart, snapshot) {
       return Container(
         width: Screens.width(context),
-        height: 155,
+        height: 200,
         color: theme.cardColor,
-        padding:const EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: Const.margin,
           vertical: Const.space8,
         ),
@@ -34,22 +35,21 @@ class _FooterSection extends StatelessWidget {
                   border: Border.all(color: theme.hintColor),
                   borderRadius: BorderRadius.circular(Const.radius),
                 ),
-                padding:const EdgeInsets.symmetric(horizontal: Const.space15),
+                padding: const EdgeInsets.symmetric(horizontal: Const.space15),
                 child: Row(
                   children: [
                     SvgPicture.asset(
                       CustomIcon.coupon,
                       color: theme.hintColor,
                     ),
-                 const   SizedBox(width: Const.space12),
+                    const SizedBox(width: Const.space12),
                     AutoSizeText(
                       (cart.selectedCoupon != null)
-       ? '${CouponList.couponList[cart.selectedCoupon!].name!} ${CouponList
-       .couponList[cart.selectedCoupon!].discount}% OFF'
+                          ? '${CouponList.couponList[cart.selectedCoupon!].name!} ${CouponList.couponList[cart.selectedCoupon!].discount}% OFF'
                           : AppLocalizations.of(context)!.enter_your_promo_code,
                       style: theme.textTheme.subtitle2,
                     ),
-                  const  Spacer(),
+                    const Spacer(),
                     Icon(
                       Icons.arrow_forward_ios_outlined,
                       color: theme.hintColor,
@@ -59,9 +59,9 @@ class _FooterSection extends StatelessWidget {
                 ),
               ),
             ),
-          const  SizedBox(height: Const.space12),
+            const SizedBox(height: Const.space12),
             Padding(
-              padding: const EdgeInsets.only(left:8.0,right: 8.0),
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -78,18 +78,27 @@ class _FooterSection extends StatelessWidget {
                 ],
               ),
             ),
-           const SizedBox(height: Const.space12),
+            Container(
+              alignment: Alignment.topRight,
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+              child: TextButton(
+                  onPressed: () {
+                    Get.offAllNamed<dynamic>(Routes.cart);
+                  },
+                  child: Text('Update')),
+            ),
+            const SizedBox(height: Const.space5),
             CustomElevatedButton(
               onTap: onCheckoutTap,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-              const    Icon(
+                  const Icon(
                     FeatherIcons.shoppingBag,
                     color: Colors.white,
                     size: 16,
                   ),
-             const     SizedBox(width: Const.space12),
+                  const SizedBox(width: Const.space12),
                   AutoSizeText(
                     AppLocalizations.of(context)!.checkout,
                     style: theme.textTheme.button,

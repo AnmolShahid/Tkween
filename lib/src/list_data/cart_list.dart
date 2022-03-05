@@ -2,7 +2,7 @@ import 'package:tkween/src/models/cart_model.dart';
 
 class CartList {
   static List<CartModel> cartList = [
-    CartModel(
+/*    CartModel(
       color: 3,
       orderId: 34330,
       price: 543,
@@ -29,5 +29,6 @@ class CartList {
       qty: 1,
       size: 0,
     ),
+*/
   ];
 }

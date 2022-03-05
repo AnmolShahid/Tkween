@@ -14,6 +14,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final _theme = Theme.of(context);
     return Scaffold(
       // each product have a color
 
@@ -23,13 +24,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
   }
 
   AppBar buildAppBar(BuildContext context) {
+    final _theme = Theme.of(context);
     return AppBar(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).backgroundColor,
       elevation: 0,
       leading: IconButton(
         icon: Icon(
           Icons.arrow_back,
-          color: Colors.white,
+          color: _theme.primaryColor,
         ),
         onPressed: () => Navigator.pop(context),
       ),
@@ -47,7 +49,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       BoxDecoration(color: Colors.red, shape: BoxShape.circle),
                   child: Icon(
                     Icons.favorite,
-                    color: Colors.white,
+                    color: _theme.primaryColor,
                     size: 20,
                   )))
         ] else ...[

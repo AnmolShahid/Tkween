@@ -3,18 +3,19 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 import 'package:tkween/src/helpers/constants.dart';
+import 'package:tkween/src/list_data/cart_list.dart';
 import 'package:tkween/src/models/cart_model.dart';
 import 'package:tkween/src/widgets/custom_network_image.dart';
 
 class CartCard extends StatefulWidget {
-   CartModel cart;
+  CartModel cart;
   final VoidCallback? onRemoveTap;
 
-   CartCard({Key? key, required this.cart, this.onRemoveTap})
-      : super(key: key);
+  CartCard({Key? key, required this.cart, this.onRemoveTap}) : super(key: key);
 
   @override
   State<CartCard> createState() => _CartCardState();
@@ -68,12 +69,10 @@ class _CartCardState extends State<CartCard> {
       ],
       child: Container(
         height: 130,
-
         decoration: BoxDecoration(
             color: theme.backgroundColor,
             border: Border.all(color: theme.primaryColor),
-            borderRadius: BorderRadius.circular(15)
-        ),
+            borderRadius: BorderRadius.circular(15)),
         padding: const EdgeInsets.symmetric(
           horizontal: Const.margin,
           vertical: Const.space12,
@@ -120,17 +119,21 @@ class _CartCardState extends State<CartCard> {
                         //   maxLines: 1,
                         // ),
                         // const SizedBox(width: 5),
-                        AutoSizeText('qty',
+                        AutoSizeText(
+                          'qty',
                           style: theme.textTheme.headline4,
                           maxLines: 1,
                         ),
                         const SizedBox(width: Const.space8),
 
                         InkWell(
-                          onTap:() {
-                            if(!widget.cart.productName!.contains('همسات ريفية'))
-                              setState(() => widget.cart.qty = max(1, widget.cart.qty! + 1));
-
+                          onTap: () {
+                            // if(!widget.cart.productName!.contains('همسات ريفية'))
+                            setState(() {
+                              widget.cart.qty = max(1, widget.cart.qty! + 1);
+                              var i = widget.cart.price;
+                              total_price = (widget.cart.qty! * i!);
+                            });
                           },
                           borderRadius: BorderRadius.circular(25),
                           child: CircleAvatar(
@@ -138,26 +141,28 @@ class _CartCardState extends State<CartCard> {
                             backgroundColor: theme.primaryColor,
                             child: const Icon(
                               Icons.add,
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 0, 0, 0),
                               size: 16,
                             ),
                           ),
                         ),
-                        
+
                         const SizedBox(width: Const.space8),
 
                         Text(
                           widget.cart.qty.toString(),
-                          style: theme.textTheme.bodyText2!.copyWith(fontSize: 16),
+                          style:
+                              theme.textTheme.bodyText2!.copyWith(fontSize: 16),
                         ),
                         const SizedBox(width: Const.space8),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             if (widget.cart.qty != 1) {
                               setState(() {
                                 widget.cart.qty = min(50, widget.cart.qty! - 1);
+                                var i = widget.cart.price;
+                                total_price = (widget.cart.qty! * i!);
                               });
-
                             }
                           },
                           borderRadius: BorderRadius.circular(25),
@@ -166,7 +171,7 @@ class _CartCardState extends State<CartCard> {
                             backgroundColor: theme.primaryColor,
                             child: const Icon(
                               Icons.remove,
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 0, 0, 0),
                               size: 16,
                             ),
                           ),
@@ -177,7 +182,7 @@ class _CartCardState extends State<CartCard> {
                     AutoSizeText(
                       NumberFormat.currency(
                         symbol: r'$',
-                      ).format(widget.cart.price),
+                      ).format((widget.cart.price)),
                       style: theme.textTheme.headline4,
                       maxLines: 1,
                     ),

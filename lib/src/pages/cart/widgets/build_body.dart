@@ -24,19 +24,22 @@ class __BuildBodyState extends State<_BuildBody> {
             padding: EdgeInsets.all(8),
             itemCount: CartList.cartList.length,
             separatorBuilder: (context, index) {
-              return Divider(color: _theme.backgroundColor,);
+              return Divider(
+                color: _theme.backgroundColor,
+              );
             },
             itemBuilder: (context, index) {
               final cart = CartList.cartList[index];
               return Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: _theme.primaryColor),
-                  borderRadius: BorderRadius.circular(15)
-                ),
+                    border: Border.all(color: _theme.primaryColor),
+                    borderRadius: BorderRadius.circular(15)),
                 child: CartCard(
                   cart: cart,
                   onRemoveTap: () {
-                   showSnackbar(context,subtitle: '',title: AppLocalizations.of(context)!.product_removed);
+                    showSnackbar(context,
+                        subtitle: '',
+                        title: AppLocalizations.of(context)!.product_removed);
                     CartList.cartList.removeAt(index);
                     setState(() {});
                   },
@@ -46,16 +49,17 @@ class __BuildBodyState extends State<_BuildBody> {
           ),
         ),
         _FooterSection(
-          total: _total.toInt() ,
+          price: _total,
+          total: total_price.toInt() + _total.toInt(),
           onCheckoutTap: () {
             Get.toNamed<dynamic>(
               Routes.checkout,
               arguments: CheckoutModel(
-                  products: CartList.cartList,
-                  // couponId: provider.selectedCoupon,
-                  couponId: 2
-                  // total: _total,
-                  ),
+                products: CartList.cartList,
+                // couponId: provider.selectedCoupon,
+                couponId: 2,
+                total: total_price + _total.toInt(),
+              ),
             );
           },
         )

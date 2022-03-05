@@ -26,7 +26,7 @@ class _FooterSection extends StatelessWidget {
       width: Screens.width(context),
       height: 130,
       alignment: Alignment.bottomCenter,
-      color: Colors.white,
+      color: _theme.backgroundColor,
       padding: const EdgeInsets.fromLTRB(
         Const.margin,
         Const.space12,
@@ -53,7 +53,7 @@ class _FooterSection extends StatelessWidget {
                       backgroundColor: _theme.primaryColor,
                       child: const Icon(
                         Icons.remove,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 16,
                       ),
                     ),
@@ -72,7 +72,7 @@ class _FooterSection extends StatelessWidget {
                       backgroundColor: _theme.primaryColor,
                       child: const Icon(
                         Icons.add,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 16,
                       ),
                     ),
@@ -100,26 +100,27 @@ class _FooterSection extends StatelessWidget {
             ],
           ),
           const SizedBox(height: Const.space25),
-          Row(children: [
-            Container(
-              padding: EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                    borderRadius:BorderRadius.circular(8),
-                    border: Border.all(
-                  color: Colors.black26,
-                )),
-                child: const Icon(FeatherIcons.shoppingCart)),
-            const SizedBox(width: Const.space15),
-            CustomElevatedButton(
-              width: 270,
-              onTap: onAddToCartTap,
-              child: AutoSizeText(
-                AppLocalizations.of(context)!.add_to_cart,
-                style: _theme.textTheme.button,
+          Row(
+            children: [
+              Container(
+                  padding: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: Colors.black26,
+                      )),
+                  child: const Icon(FeatherIcons.shoppingCart)),
+              const SizedBox(width: Const.space15),
+              CustomElevatedButton(
+                width: 270,
+                onTap: onAddToCartTap,
+                child: AutoSizeText(
+                  AppLocalizations.of(context)!.add_to_cart,
+                  style: _theme.textTheme.button,
+                ),
               ),
-            ),
-          ],),
-
+            ],
+          ),
         ],
       ),
     );

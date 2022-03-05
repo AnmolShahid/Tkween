@@ -135,7 +135,7 @@ class _ProductCardState extends State<ProductCard> {
                                     widget.product.name ?? '',
                                     maxLines: 2,
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: _theme.backgroundColor,
                                       fontSize:
                                           _theme.textTheme.bodyText2?.fontSize,
                                     ),
@@ -154,7 +154,7 @@ class _ProductCardState extends State<ProductCard> {
                                         ).format(widget.product.price! -
                                             _discountPrice),
                                         style: TextStyle(
-                                          color: Colors.white,
+                                          color: _theme.backgroundColor,
                                           fontSize: _theme
                                               .textTheme.bodyText2?.fontSize,
                                         ),
@@ -190,7 +190,7 @@ class _ProductCardState extends State<ProductCard> {
                                             height: 30,
                                             padding: EdgeInsets.all(3),
                                             decoration: BoxDecoration(
-                                                color: Colors.white,
+                                                color: _theme.backgroundColor,
                                                 shape: BoxShape.circle),
                                             child: Icon(
                                               Icons.shopping_cart_outlined,

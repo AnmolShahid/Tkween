@@ -14,6 +14,7 @@ class _BuildProductCard extends StatefulWidget {
 
 class _BuildProductCardState extends State<_BuildProductCard> {
   bool liked = false;
+
   @override
   Widget build(BuildContext context) {
     final _theme = Theme.of(context);
@@ -117,7 +118,7 @@ class _BuildProductCardState extends State<_BuildProductCard> {
                                 widget.product.name ?? '',
                                 maxLines: 2,
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: _theme.backgroundColor,
                                   fontSize:
                                       _theme.textTheme.bodyText2?.fontSize,
                                 ),
@@ -136,7 +137,7 @@ class _BuildProductCardState extends State<_BuildProductCard> {
                                     ).format(
                                         widget.product.price! - _discountPrice),
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: _theme.backgroundColor,
                                       fontSize:
                                           _theme.textTheme.bodyText2?.fontSize,
                                     ),
@@ -172,7 +173,7 @@ class _BuildProductCardState extends State<_BuildProductCard> {
                                         height: 30,
                                         padding: EdgeInsets.all(3),
                                         decoration: BoxDecoration(
-                                            color: Colors.white,
+                                            color: _theme.backgroundColor,
                                             shape: BoxShape.circle),
                                         child: Icon(
                                           Icons.shopping_cart_outlined,
