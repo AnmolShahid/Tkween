@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tkween/src/helpers/constants.dart';
 import 'package:tkween/src/pages/home/home_page.dart';
 
+import 'package:tkween/src/providers/locale_provider.dart';
 // ignore: non_constant_identifier_names
 AppBar CustomAppBarLang(
   BuildContext context, {
@@ -33,5 +35,6 @@ AppBar CustomAppBarLang(
 }
 
 void buildBackOnTap() {
-   Get.offAll(() => HomeScreen());
+  
+    Get.offAllNamed<dynamic>(Routes.home);
 }

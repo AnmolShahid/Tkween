@@ -32,7 +32,7 @@ class ProductTitleWithImage extends StatelessWidget {
                   textAlign: TextAlign.end,
                   style: TextStyle(
                       fontSize: Theme.of(context).textTheme.headline3!.fontSize,
-                      color: Colors.white),
+                      color: Theme.of(context).primaryColor),
                 ),
                 SizedBox(height: 78),
                 RichText(
@@ -40,7 +40,7 @@ class ProductTitleWithImage extends StatelessWidget {
                     children: [
                       TextSpan(
                           text: "Price\n",
-                          style: TextStyle(color: Colors.white)),
+                          style: TextStyle(color: Theme.of(context).primaryColor)),
                       TextSpan(
                           text: "\$${product?.price}\n",
                           style: TextStyle(
