@@ -20,7 +20,7 @@ import 'package:tkween/src/models/product_model.dart';
 import 'package:tkween/src/providers/locale_provider.dart';
 //import 'package:tkween/src/pages/home/widgets/image_slider.dart';
 import 'package:tkween/src/widgets/custom_drawer.dart';
-
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import '../../helpers/snack_toast.dart';
 import '../../list_data/cart_list.dart';
 
@@ -33,3 +33,5 @@ part 'widgets/build_scrollable_category.dart';
 part 'widgets/build_scrollable_product.dart';
 part 'widgets/build_product_card.dart';
 part 'widgets/build_category_card.dart';
+part 'widgets/build_allproduct.dart';
+part 'widgets/build_all_product_card.dart';

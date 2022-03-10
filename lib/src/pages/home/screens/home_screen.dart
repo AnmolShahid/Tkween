@@ -72,9 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         top: 0,
                         child: ListView(
                           children: [
-                            //                 CarouselWithIndicatorDemo(),
+                            //   CarouselWithIndicatorDemo(),
                             //  const SizedBox(height: Const.space15),
-                            /* _BuildSearch(
+                            /*   _BuildSearch(
                       controller: _searchController,
                       onSearchTap: () {
                         FocusScope.of(context).requestFocus(FocusNode());
@@ -82,6 +82,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             arguments: _searchController?.text);
                       },
                     ),*/
+                            _BuildScrollableAllProduct(
+                              scrollDirection:
+                                  lang.languageCode == 'ar' ? true : false,
+                              itemList: ProductList.flashSaleProductList,
+                              label: 'Latest books',
+                              onSeeAllTap: () => Get.toNamed<dynamic>(
+                                Routes.allProduct,
+                                arguments: AppLocalizations.of(context)!.all,
+                              ),
+                            ),
                             const SizedBox(height: Const.space15),
                             const _BuildScrollableCategory(),
                             const SizedBox(height: Const.space25),
@@ -162,10 +172,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     ]),
                 body: SafeArea(
                   child: Stack(
+
                     children: [
                       Positioned.fill(
                         top: 0,
                         child: ListView(
+                          
                           children: [
                             //                 CarouselWithIndicatorDemo(),
                             //  const SizedBox(height: Const.space15),
@@ -177,6 +189,18 @@ class _HomeScreenState extends State<HomeScreen> {
                             arguments: _searchController?.text);
                       },
                     ),*/
+
+                            _BuildScrollableAllProduct(
+                              
+                              scrollDirection:
+                                  lang.languageCode == 'ar' ? true : false,
+                              itemList: ProductList.flashSaleProductList,
+                              label: 'Latest books',
+                              onSeeAllTap: () => Get.toNamed<dynamic>(
+                                Routes.allProduct,
+                                arguments: AppLocalizations.of(context)!.all,
+                              ),
+                            ),
                             const SizedBox(height: Const.space15),
                             const _BuildScrollableCategory(),
                             const SizedBox(height: Const.space25),
